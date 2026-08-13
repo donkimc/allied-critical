@@ -1,4 +1,5 @@
-/* Mobile / tablet layout. Desktop (≥901px) stays as authored in the page HTML. */
+/* Mobile / tablet layout. Desktop (≥901px) stays as authored in the page HTML.
+   Selectors allow spaces in serialized inline styles (React rewrites style=""). */
 
 html, body, #dc-root, #dc-root > .sc-host {
   overflow-x: clip;
@@ -14,10 +15,13 @@ image-slot {
 }
 
 /* — Navigation — */
-.nav {
-  display: block;
+nav.nav {
+  display: block !important;
   padding: 0;
   gap: 0;
+  position: relative;
+  z-index: 50;
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-divider);
 }
 
@@ -27,6 +31,7 @@ image-slot {
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 16px;
+  width: 100%;
   padding-top: 16px;
   padding-bottom: 16px;
   position: relative;
@@ -65,6 +70,9 @@ image-slot {
   flex-direction: column;
   gap: 5px;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 2;
+  pointer-events: auto;
 }
 
 .nav-toggle-bar {
@@ -74,6 +82,7 @@ image-slot {
   background: var(--color-text);
   border-radius: 1px;
   transition: transform 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
 }
 
 .nav.is-open .nav-toggle-bar:nth-child(1) {
@@ -121,12 +130,12 @@ image-slot {
     line-height: 20px;
   }
 
-  [style*="repeat(4,1fr)"],
-  [style*="2fr 1fr 1fr 1fr"] {
+  [style*="repeat(4"],
+  [style*="2fr 1fr 1fr"] {
     grid-template-columns: 1fr 1fr !important;
   }
 
-  [style*="repeat(3,1fr)"] {
+  [style*="repeat(3"] {
     grid-template-columns: 1fr 1fr !important;
   }
 }
@@ -143,53 +152,45 @@ image-slot {
     padding-bottom: 12px;
   }
 
-  [style*="repeat(4,1fr)"],
-  [style*="repeat(3,1fr)"],
-  [style*="2fr 1fr 1fr 1fr"],
-  [style*="grid-template-columns:1fr 1fr"],
-  [style*="grid-template-columns:1fr 1.2fr"],
-  [style*="grid-template-columns:1.2fr 1fr"],
-  [style*="minmax(0,5fr) minmax(0,7fr)"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  .grid-facts {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
   [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
 
   .grid-facts {
+    grid-template-columns: 1fr 1fr !important;
     gap: 10px 20px !important;
   }
 
-  [style*="repeat(4,1fr)"] > [style*="border-right"] {
+  [style*="repeat(4"] > [style*="border-right"] {
     border-right: none !important;
     border-bottom: 1px solid var(--color-divider);
   }
 
-  [style*="repeat(4,1fr)"] > :last-child {
+  [style*="repeat(4"] > :last-child {
     border-bottom: none;
   }
 
-  section[style*="height:640px"] {
+  .hero-home {
     height: auto !important;
     min-height: 420px;
   }
 
-  section[style*="height:640px"] > .wrap {
+  .hero-home > .wrap {
     height: auto !important;
     min-height: 420px;
     padding-top: 48px !important;
     padding-bottom: 48px !important;
   }
 
+  .blueprint[style*="padding: 24px"],
   .blueprint[style*="padding:24px"],
+  .blueprint[style*="padding: 32px"],
   .blueprint[style*="padding:32px"],
   form.blueprint,
+  .blueprint > [style*="padding: 28px"],
   .blueprint > [style*="padding:28px"],
+  .blueprint > [style*="padding: 32px"],
   .blueprint > [style*="padding:32px"] {
     padding: 20px !important;
   }
