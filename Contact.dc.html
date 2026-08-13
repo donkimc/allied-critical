@@ -18,10 +18,7 @@
     .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
     .kicker{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--color-accent-700);margin:0 0 12px;font-family:var(--font-body)}
     .caption-rule{height:1px;border:0;margin:0 0 28px;background:var(--color-divider)}
-    .corner{position:absolute;width:15px;height:15px;color:color-mix(in srgb,var(--color-text) 55%,transparent);pointer-events:none}
-    .corner::before{content:"";position:absolute;left:7px;top:0;width:1px;height:100%;background:currentColor}
-    .corner::after{content:"";position:absolute;top:7px;left:0;width:100%;height:1px;background:currentColor}
-    .corner.tl{top:-8px;left:-8px}.corner.tr{top:-8px;right:-8px}.corner.bl{bottom:-8px;left:-8px}.corner.br{bottom:-8px;right:-8px}
+    .corner{display:none}
     h1,h2,h3{font-family:var(--font-heading);font-weight:var(--font-heading-weight);text-transform:uppercase;letter-spacing:.02em;margin:0}
     .field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
     .field label{font-size:13px;font-weight:600}
