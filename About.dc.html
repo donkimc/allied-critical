@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./responsive.css">
 <script src="./support.js"></script>
 <script src="./nav.js" defer></script>
+<script src="./responsive.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -58,7 +59,7 @@
   </div>
 </section>
 
-<section class="wrap" style="padding:64px 40px;display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<section class="wrap stack" style="padding:64px 40px;display:grid;grid-template-columns:1fr 1fr;gap:48px">
   <div>
     <span class="kicker">01 · Company Overview</span>
     <hr class="caption-rule">
@@ -73,7 +74,7 @@
 </section>
 
 <section style="background:var(--color-accent-900);padding:64px 0">
-  <div class="wrap" style="color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+  <div class="wrap stack" style="color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
     <div>
       <span class="kicker" style="color:#cdd9e4">02 · Why Tungsten</span>
       <hr class="caption-rule" style="background:rgba(255,255,255,.2)">
@@ -91,7 +92,7 @@
 <section class="wrap" style="padding:64px 40px">
   <span class="kicker">03 · Corporate Timeline</span>
   <hr class="caption-rule">
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+  <div class="stack" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
     <div style="padding:20px 24px;border-right:1px solid var(--color-divider)"><strong style="font-family:var(--font-heading);font-size:20px">1904–1985</strong><p style="font-size:14px;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:8px 0 0">Borralha in historic production; over 10,280 tonnes of wolframite concentrate produced</p></div>
     <div style="padding:20px 24px;border-right:1px solid var(--color-divider)"><strong style="font-family:var(--font-heading);font-size:20px">2025</strong><p style="font-size:14px;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:8px 0 0">Updated mineral resource estimate; 2025 drill program confirms high-grade extensions</p></div>
     <div style="padding:20px 24px;border-right:1px solid var(--color-divider)"><strong style="font-family:var(--font-heading);font-size:20px">Jun 2026</strong><p style="font-size:14px;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:8px 0 0">Conditional approval to list on the TSX Venture Exchange</p></div>
@@ -102,7 +103,7 @@
 <section class="wrap" style="padding:24px 40px 72px">
   <span class="kicker">04 · Management</span>
   <hr class="caption-rule">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+  <div class="stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
     <div class="person"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <image-slot id="mgmt-bonnell" shape="rect" class="avatar" placeholder="Photo"></image-slot>
       <h3 style="font-size:18px">Roy Bonnell</h3><p style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent);margin:4px 0 0">CEO / Director</p></div>
@@ -127,7 +128,7 @@
 <section class="wrap" style="padding:0 40px 72px">
   <span class="kicker">05 · Board of Directors</span>
   <hr class="caption-rule">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+  <div class="stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
     <div class="person"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <image-slot id="board-bonnell" shape="rect" class="avatar" placeholder="Photo"></image-slot>
       <h3 style="font-size:18px">Roy Bonnell</h3><p style="font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent);margin:4px 0 0">CEO / Director</p></div>
@@ -152,7 +153,7 @@
 <section class="wrap" style="padding:0 40px 72px">
   <span class="kicker">06 · Responsible Development</span>
   <hr class="caption-rule">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+  <div class="stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
     <div class="blueprint" style="position:relative;border:1px solid var(--color-divider);padding:24px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <h3 style="font-size:18px">Environmental Stewardship</h3><p style="font-size:14px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:12px 0 0">Development advances under Portugal's Environmental Impact Assessment process, overseen by national environmental and geology authorities.</p></div>
     <div class="blueprint" style="position:relative;border:1px solid var(--color-divider);padding:24px"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
@@ -163,7 +164,7 @@
 </section>
 
 <footer style="background:var(--color-accent-900);color:#e7ecf0;padding:56px 0 28px">
-  <div class="wrap" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px">
+  <div class="wrap stack" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px">
     <div>
       <img src="uploads/acm_512x512@2.png" alt="Allied Critical Metals" style="height:48px;width:48px;display:block;margin-bottom:12px">
       <span style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:18px;text-transform:uppercase;color:#fff">Allied Critical Metals</span>

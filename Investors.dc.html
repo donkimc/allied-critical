@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./responsive.css">
 <script src="./support.js"></script>
 <script src="./nav.js" defer></script>
+<script src="./responsive.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -53,7 +54,7 @@
 </section>
 
 <section class="wrap" style="padding:32px 40px">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+  <div class="stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
     <div class="blueprint" style="position:relative;border:1px solid var(--color-divider);padding:24px">
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <span class="kicker" style="margin-bottom:8px">CSE: ACM</span>
@@ -84,10 +85,10 @@
       <colgroup><col style="width:56px"><col></colgroup>
       <thead><tr><th>No.</th><th>Highlight</th></tr></thead>
       <tbody>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">01</td><td>Nasdaq Capital Market listing application filed August 2026, expanding access to U.S. institutional investors</td></tr>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">02</td><td>Conditional approval to list on the TSX Venture Exchange as a Tier 1 Mining Issuer, June 2026</td></tr>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">03</td><td>Supported by multi-million dollar financing packages structured to accelerate development toward production</td></tr>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">04</td><td>100% ownership of both Borralha and Vila Verde, with no underlying royalty overhang</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">01</td><td class="mobile-clamp">Nasdaq Capital Market listing application filed August 2026, expanding access to U.S. institutional investors</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">02</td><td class="mobile-clamp">Conditional approval to list on the TSX Venture Exchange as a Tier 1 Mining Issuer, June 2026</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">03</td><td class="mobile-clamp">Supported by multi-million dollar financing packages structured to accelerate development toward production</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">04</td><td class="mobile-clamp">100% ownership of both Borralha and Vila Verde, with no underlying royalty overhang</td></tr>
       </tbody>
     </table>
   </div>
@@ -97,7 +98,7 @@
   <div class="wrap" style="color:#fff">
     <span class="kicker" style="color:#cdd9e4">Strategic Financing</span>
     <hr class="caption-rule" style="background:rgba(255,255,255,.2)">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+    <div class="stack" style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
       <div>
         <h3 style="font-size:22px;color:#fff">U.S. $25 Million Equity Financing</h3>
         <p style="font-size:15px;line-height:1.65;color:#cdd9e4;margin:12px 0 0">Allied is progressing the second tranche of its non-brokered U.S.$25 million equity private placement, providing capital to advance Borralha toward production decisions.</p>
@@ -111,7 +112,7 @@
 </section>
 
 <section class="wrap" style="padding:56px 40px">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
+  <div class="stack" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
     <div class="blueprint" style="position:relative;border:1px solid var(--color-divider);padding:28px">
       <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
       <span class="kicker">Investor Presentation</span>
@@ -150,7 +151,7 @@
 </section>
 
 <footer style="background:var(--color-accent-900);color:#e7ecf0;padding:56px 0 28px">
-  <div class="wrap" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px">
+  <div class="wrap stack" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px">
     <div>
       <img src="uploads/acm_512x512@2.png" alt="Allied Critical Metals" style="height:48px;width:48px;display:block;margin-bottom:12px">
       <span style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:18px;text-transform:uppercase;color:#fff">Allied Critical Metals</span>

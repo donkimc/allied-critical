@@ -1,13 +1,8 @@
-/* Mobile / tablet layout. Desktop (≥901px) stays as authored in the page HTML.
-   Selectors allow spaces in serialized inline styles (React rewrites style=""). */
+/* Mobile / tablet. Classes + JS set grid-template-columns; do not rely on [style*=] (React CSSOM). */
 
 html, body, #dc-root, #dc-root > .sc-host {
   overflow-x: clip;
   max-width: 100%;
-}
-
-[style*="grid-template-columns"] > * {
-  min-width: 0;
 }
 
 image-slot {
@@ -95,7 +90,15 @@ nav.nav {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* — Tablet: ≤900px — */
+.more-label {
+  display: none;
+}
+
+.table-num {
+  white-space: nowrap;
+}
+
+/* — Narrow screens: stack boxes, clamp copy — */
 @media (max-width: 900px) {
   .nav-toggle {
     display: flex;
@@ -130,18 +133,6 @@ nav.nav {
     line-height: 20px;
   }
 
-  [style*="repeat(4"],
-  [style*="2fr 1fr 1fr"] {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  [style*="repeat(3"] {
-    grid-template-columns: 1fr 1fr !important;
-  }
-}
-
-/* — Phone: ≤640px (iPhone 13 is ~390px) — */
-@media (max-width: 640px) {
   .wrap {
     padding-left: max(20px, env(safe-area-inset-left)) !important;
     padding-right: max(20px, env(safe-area-inset-right)) !important;
@@ -152,7 +143,8 @@ nav.nav {
     padding-bottom: 12px;
   }
 
-  [style*="grid-template-columns"] {
+  .stack {
+    display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
@@ -160,15 +152,6 @@ nav.nav {
   .grid-facts {
     grid-template-columns: 1fr 1fr !important;
     gap: 10px 20px !important;
-  }
-
-  [style*="repeat(4"] > [style*="border-right"] {
-    border-right: none !important;
-    border-bottom: 1px solid var(--color-divider);
-  }
-
-  [style*="repeat(4"] > :last-child {
-    border-bottom: none;
   }
 
   .hero-home {
@@ -183,18 +166,6 @@ nav.nav {
     padding-bottom: 48px !important;
   }
 
-  .blueprint[style*="padding: 24px"],
-  .blueprint[style*="padding:24px"],
-  .blueprint[style*="padding: 32px"],
-  .blueprint[style*="padding:32px"],
-  form.blueprint,
-  .blueprint > [style*="padding: 28px"],
-  .blueprint > [style*="padding:28px"],
-  .blueprint > [style*="padding: 32px"],
-  .blueprint > [style*="padding:32px"] {
-    padding: 20px !important;
-  }
-
   .subscribe-form {
     flex-direction: column;
     max-width: none !important;
@@ -205,17 +176,41 @@ nav.nav {
     width: 100%;
   }
 
+  .mobile-clamp,
+  .blueprint p,
+  .blueprint h3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .blueprint h3,
+  .mobile-clamp-title {
+    -webkit-line-clamp: 2;
+  }
+
+  .more-label {
+    display: inline;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-accent-700);
+    margin-left: 4px;
+  }
+
   .table {
     table-layout: auto !important;
   }
 
-  .blueprint:has(.table) {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  .table-num,
+  .table td:first-child {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
   }
 
-  .table th,
-  .table td {
-    word-break: break-word;
+  .quote-row {
+    flex-wrap: nowrap !important;
+    white-space: nowrap;
   }
 }

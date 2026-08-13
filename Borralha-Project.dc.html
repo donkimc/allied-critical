@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./responsive.css">
 <script src="./support.js"></script>
 <script src="./nav.js" defer></script>
+<script src="./responsive.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -56,7 +57,7 @@
   </div>
 </section>
 
-<section class="wrap" style="padding:56px 40px 24px;display:grid;grid-template-columns:1fr 1fr;gap:48px">
+<section class="wrap stack" style="padding:56px 40px 24px;display:grid;grid-template-columns:1fr 1fr;gap:48px">
   <div>
     <span class="kicker">Overview</span>
     <hr class="caption-rule">
@@ -86,17 +87,17 @@
       <colgroup><col style="width:56px"><col></colgroup>
       <thead><tr><th>No.</th><th>Highlight</th></tr></thead>
       <tbody>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">01</td><td>Measured &amp; Indicated Resource: 13.0 Mt at 0.21% WO₃; Inferred Resource: 7.7 Mt at 0.18% WO₃</td></tr>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">02</td><td>Historic production 1904–1985: over 10,280 tonnes of wolframite concentrate at an average grade of 66%</td></tr>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">03</td><td>2025 drill program: 4,120 metres across 15 holes, including 12.0m @ 4.27% WO₃ (incl. 6.0m @ 8.39% WO₃)</td></tr>
-        <tr><td style="color:var(--color-accent-700);font-weight:600">04</td><td>Ferberite, para-magnetic tungsten mineralization — preliminary metallurgical testing shows 95% recoveries</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">01</td><td class="mobile-clamp">Measured &amp; Indicated Resource: 13.0 Mt at 0.21% WO₃; Inferred Resource: 7.7 Mt at 0.18% WO₃</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">02</td><td class="mobile-clamp">Historic production 1904–1985: over 10,280 tonnes of wolframite concentrate at an average grade of 66%</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">03</td><td class="mobile-clamp">2025 drill program: 4,120 metres across 15 holes, including 12.0m @ 4.27% WO₃ (incl. 6.0m @ 8.39% WO₃)</td></tr>
+        <tr><td class="table-num" style="color:var(--color-accent-700);font-weight:600">04</td><td class="mobile-clamp">Ferberite, para-magnetic tungsten mineralization — preliminary metallurgical testing shows 95% recoveries</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
 <section style="background:var(--color-accent-900);padding:56px 0">
-  <div class="wrap" style="color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:48px">
+  <div class="wrap stack" style="color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:48px">
     <div>
       <span class="kicker" style="color:#cdd9e4">Strategic Importance</span>
       <hr class="caption-rule" style="background:rgba(255,255,255,.2)">
@@ -113,7 +114,7 @@
 <section class="wrap" style="padding:56px 40px">
   <span class="kicker">Development Timeline</span>
   <hr class="caption-rule">
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+  <div class="stack" style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
     <div style="padding:20px 24px;border-right:1px solid var(--color-divider)"><strong style="font-family:var(--font-heading);font-size:18px">Nov 2025</strong><p style="font-size:14px;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:8px 0 0">Updated mineral resource estimate</p></div>
     <div style="padding:20px 24px;border-right:1px solid var(--color-divider)"><strong style="font-family:var(--font-heading);font-size:18px">2025</strong><p style="font-size:14px;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:8px 0 0">15-hole drill program; new high-grade zones confirmed</p></div>
     <div style="padding:20px 24px;border-right:1px solid var(--color-divider)"><strong style="font-family:var(--font-heading);font-size:18px">In Progress</strong><p style="font-size:14px;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:8px 0 0">Environmental Impact Assessment under review by APA &amp; DGEG</p></div>
@@ -160,7 +161,7 @@
 </section>
 
 <footer style="background:var(--color-accent-900);color:#e7ecf0;padding:56px 0 28px">
-  <div class="wrap" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px">
+  <div class="wrap stack" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px">
     <div>
       <img src="uploads/acm_512x512@2.png" alt="Allied Critical Metals" style="height:48px;width:48px;display:block;margin-bottom:12px">
       <span style="font-family:var(--font-heading);font-weight:var(--font-heading-weight);font-size:18px;text-transform:uppercase;color:#fff">Allied Critical Metals</span>
