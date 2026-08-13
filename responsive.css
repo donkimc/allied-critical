@@ -1,0 +1,220 @@
+/* Mobile / tablet layout. Desktop (≥901px) stays as authored in the page HTML. */
+
+html, body, #dc-root, #dc-root > .sc-host {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+[style*="grid-template-columns"] > * {
+  min-width: 0;
+}
+
+image-slot {
+  max-width: 100%;
+}
+
+/* — Navigation — */
+.nav {
+  display: block;
+  padding: 0;
+  gap: 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.wrap.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.nav-brand {
+  margin-right: 0;
+  flex: none;
+}
+
+.nav-brand img {
+  height: 36px;
+  width: auto;
+  max-width: min(180px, 55vw);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.nav-toggle {
+  display: none;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  touch-action: manipulation;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 1px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* — Tablet: ≤900px — */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .wrap.nav-inner {
+    flex-wrap: wrap;
+  }
+
+  .nav-brand {
+    margin-right: auto;
+  }
+
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0 12px;
+    border-top: 1px solid var(--color-divider);
+  }
+
+  .nav.is-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 0;
+    min-height: 44px;
+    line-height: 20px;
+  }
+
+  [style*="repeat(4,1fr)"],
+  [style*="2fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  [style*="repeat(3,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* — Phone: ≤640px (iPhone 13 is ~390px) — */
+@media (max-width: 640px) {
+  .wrap {
+    padding-left: max(20px, env(safe-area-inset-left)) !important;
+    padding-right: max(20px, env(safe-area-inset-right)) !important;
+  }
+
+  .wrap.nav-inner {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  [style*="repeat(4,1fr)"],
+  [style*="repeat(3,1fr)"],
+  [style*="2fr 1fr 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:1fr 1.2fr"],
+  [style*="grid-template-columns:1.2fr 1fr"],
+  [style*="minmax(0,5fr) minmax(0,7fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-facts {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  [style*="grid-template-columns"] {
+    gap: 20px !important;
+  }
+
+  .grid-facts {
+    gap: 10px 20px !important;
+  }
+
+  [style*="repeat(4,1fr)"] > [style*="border-right"] {
+    border-right: none !important;
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  [style*="repeat(4,1fr)"] > :last-child {
+    border-bottom: none;
+  }
+
+  section[style*="height:640px"] {
+    height: auto !important;
+    min-height: 420px;
+  }
+
+  section[style*="height:640px"] > .wrap {
+    height: auto !important;
+    min-height: 420px;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .blueprint[style*="padding:24px"],
+  .blueprint[style*="padding:32px"],
+  form.blueprint,
+  .blueprint > [style*="padding:28px"],
+  .blueprint > [style*="padding:32px"] {
+    padding: 20px !important;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    max-width: none !important;
+    width: 100%;
+  }
+
+  .subscribe-form .btn {
+    width: 100%;
+  }
+
+  .table {
+    table-layout: auto !important;
+  }
+
+  .blueprint:has(.table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table th,
+  .table td {
+    word-break: break-word;
+  }
+}

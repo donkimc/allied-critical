@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -10,8 +10,10 @@
 <![CDATA[
 <helmet>
   <link rel="stylesheet" href="_ds/industry-1333fe1a-b716-4e18-86b0-db6c84eaa164/styles.css">
+  <link rel="stylesheet" href="./responsive.css">
   <script src="_ds/industry-1333fe1a-b716-4e18-86b0-db6c84eaa164/_ds_bundle.js"></script>
   <script src="./image-slot.js"></script>
+  <script src="./nav.js"></script>
   <style>
     body{margin:0;background:var(--color-bg);color:var(--color-text);text-wrap:pretty}
     a{color:var(--color-accent-700);text-decoration:none}
@@ -24,15 +26,22 @@
   </style>
 </helmet>
 
-<nav class="nav" style="display:flex;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:1px solid var(--color-divider)">
-  <a href="Homepage.dc.html" class="nav-brand" style="display:flex;align-items:center;text-decoration:none"><img src="uploads/acm_560x132@2.png" alt="Allied Critical Metals" style="height:36px;width:auto;display:block"></a>
-  <div style="display:flex;gap:32px;align-items:center;font-size:14px">
-    <a href="Homepage.dc.html" aria-current="location">Home</a>
-    <a href="About.dc.html">About Us</a>
-    <a href="Projects.dc.html">Projects</a>
-    <a href="Investors.dc.html">Investors</a>
-    <a href="Newsroom.dc.html">News</a>
-    <a href="Contact.dc.html">Contact</a>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="Homepage.dc.html" class="nav-brand" style="display:flex;align-items:center;text-decoration:none"><img src="uploads/acm_560x132@2.png" alt="Allied Critical Metals" style="height:36px;width:auto;display:block"></a>
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <div id="site-nav" class="nav-links">
+      <a href="Homepage.dc.html" aria-current="location">Home</a>
+      <a href="About.dc.html">About Us</a>
+      <a href="Projects.dc.html">Projects</a>
+      <a href="Investors.dc.html">Investors</a>
+      <a href="Newsroom.dc.html">News</a>
+      <a href="Contact.dc.html">Contact</a>
+    </div>
   </div>
 </nav>
 
@@ -138,7 +147,7 @@
         <div style="padding:28px">
           <h3 style="font-size:22px;color:#fff">Borralha Tungsten Project</h3>
           <p style="font-size:14px;line-height:1.6;color:#cdd9e4;margin:12px 0 20px">Flagship, past-producing property and one of the largest undeveloped tungsten resources in the EU.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;font-size:13px;color:#e7ecf0;border-top:1px solid rgba(255,255,255,.2);padding-top:16px">
+          <div class="grid-facts" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;font-size:13px;color:#e7ecf0;border-top:1px solid rgba(255,255,255,.2);padding-top:16px">
             <div><strong style="color:#fff">Ownership</strong><br>100%</div>
             <div><strong style="color:#fff">Commodity</strong><br>Tungsten (WO₃)</div>
             <div><strong style="color:#fff">Stage</strong><br>Advanced / Brownfield</div>
@@ -153,7 +162,7 @@
         <div style="padding:28px">
           <h3 style="font-size:22px;color:#fff">Vila Verde Tungsten Project</h3>
           <p style="font-size:14px;line-height:1.6;color:#cdd9e4;margin:12px 0 20px">100%-owned property with additional regional exploration upside near Borralha.</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;font-size:13px;color:#e7ecf0;border-top:1px solid rgba(255,255,255,.2);padding-top:16px">
+          <div class="grid-facts" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;font-size:13px;color:#e7ecf0;border-top:1px solid rgba(255,255,255,.2);padding-top:16px">
             <div><strong style="color:#fff">Ownership</strong><br>100%</div>
             <div><strong style="color:#fff">Commodity</strong><br>Tungsten (WO₃)</div>
             <div><strong style="color:#fff">Stage</strong><br>Exploration</div>
@@ -224,7 +233,7 @@
       <h3 style="font-size:22px">Investor Updates</h3>
       <p style="font-size:15px;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:8px 0 0">Sign up for news releases, filings and presentation updates.</p>
     </div>
-    <div style="display:flex;gap:12px;max-width:420px;flex:1">
+    <div class="subscribe-form" style="display:flex;gap:12px;max-width:420px;flex:1">
       <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" style="flex:1">
       <button type="button" class="btn btn-primary">Subscribe</button>
     </div>
